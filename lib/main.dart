@@ -28,11 +28,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   double size = 300;
   
-  int red = 0;
-  
-  int green = 0;
-  
-  int blue = 0;
+  var red = 0;
+  var green = 0;
+  var blue = 0;
+
+  double rvalor = 0;
+  double gvalor = 0;
+  double bvalor = 0;
 
 
   @override
@@ -108,11 +110,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   Expanded(
                     child: Slider(
                       activeColor: Colors.red,
-                      value: 0,
+                      value: rvalor,
                       min: 0,
                       max: 255,
                       onChanged: (value) {
-                        
+                        setState(() {
+                          red = value.toInt();
+                          rvalor = value;
+                        });
                       },
                     ),
                   ),
@@ -133,10 +138,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   Expanded(
                     child: Slider(
                       activeColor: Colors.green,
-                      value: 0,
+                      value: gvalor,
                       min: 0,
                       max: 255,
-                      onChanged: (value) {},
+                      onChanged: (value) {
+                        setState(() {
+                          green = value.toInt();
+                          gvalor = value;
+                        });
+                      },
                     ),
                   ),
                   Text(
@@ -156,10 +166,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   Expanded(
                     child: Slider(
                       activeColor: Colors.blue,
-                      value: 0,
+                      value: bvalor,
                       min: 0,
                       max: 255,
-                      onChanged: (value) {},
+                      onChanged: (value) {
+                        setState(() {
+                          blue = value.toInt();
+                          bvalor = value;
+                        });
+                      },
                     ),
                   ),
                   Text(
