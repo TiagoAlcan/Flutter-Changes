@@ -28,14 +28,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   double size = 300;
   
-  var red = 0;
-  var green = 0;
-  var blue = 0;
-
-  double rvalor = 0;
-  double gvalor = 0;
-  double bvalor = 0;
-
+  double red = 0;
+  double green = 0;
+  double blue = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Icon(
                   Icons.lock_clock,
                   size: size,
-                  color: Color.fromRGBO(red, green, blue, 1),
+                  color: Color.fromRGBO(red.toInt(), green.toInt(), blue.toInt(), 1),
                 ),
               ),
             ),
@@ -110,13 +105,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   Expanded(
                     child: Slider(
                       activeColor: Colors.red,
-                      value: rvalor,
+                      value: red,
                       min: 0,
                       max: 255,
                       onChanged: (value) {
                         setState(() {
-                          red = value.toInt();
-                          rvalor = value;
+                          red = value;
                         });
                       },
                     ),
@@ -138,13 +132,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   Expanded(
                     child: Slider(
                       activeColor: Colors.green,
-                      value: gvalor,
+                      value: green,
                       min: 0,
                       max: 255,
                       onChanged: (value) {
                         setState(() {
-                          green = value.toInt();
-                          gvalor = value;
+                          green = value;
                         });
                       },
                     ),
@@ -166,13 +159,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   Expanded(
                     child: Slider(
                       activeColor: Colors.blue,
-                      value: bvalor,
+                      value: blue,
                       min: 0,
                       max: 255,
                       onChanged: (value) {
                         setState(() {
-                          blue = value.toInt();
-                          bvalor = value;
+                          blue = value;
                         });
                       },
                     ),
